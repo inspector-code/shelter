@@ -1,0 +1,160 @@
+@import "../../assets/css/normalize.scss";
+@import "../../assets/css/cssreset.scss";
+@import "../../assets/css/variables.scss";
+
+@font-face {
+  font-family: Georgia;
+  src: url('../../assets/fonts/georgia.ttf');
+}
+
+@font-face {
+  font-family: Arial;
+  src: url('../../assets/fonts/arial.ttf');
+}
+
+
+//COMMON STYLES
+html {
+  font-family: 'Georgia', serif;
+}
+
+body {
+  background-color: lightgray;
+}
+
+.container {
+  width: 1920px;
+  margin: 0 auto;
+  background-color: white;
+
+  &-inner {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+  }
+}
+
+.common-button {
+  width: fit-content;
+  display: block;
+  padding: rem(15px) rem(45px);
+  border-radius: rem(100px);
+  background: #F1CDB3;
+  text-decoration: none;
+  color: #292929;
+  font-size: rem(17px);
+  line-height: 130%;
+  letter-spacing: 0.06em;
+
+  &:hover {
+    background: #FDDCC4;
+  }
+}
+//END COMMON STYLES
+
+
+//HEADER
+header {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.header__content {
+  display: flex;
+  justify-content: space-between;
+  padding-top: rem(60px);
+
+  &__logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-title {
+      font-size: rem(32px);
+      line-height: 110%;
+      letter-spacing: 0.06em;
+      color: #F1CDB3;
+      margin-bottom: rem(10px);
+    }
+
+    &-subtitle {
+      font-family: 'Arial', sans-serif;
+      font-size: rem(13px);
+      line-height: rem(15px);
+      letter-spacing: 0.1em;
+      color: #FFFFFF;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+
+    &__items {
+      display: flex;
+      font-family: 'Arial', sans-serif;
+      font-size: rem(15px);
+      line-height: 160%;
+      color: #CDCDCD;
+
+      li:hover {
+        color: #FAFAFA;
+        cursor: pointer;
+      }
+
+      li + li {
+        margin-left: rem(35px);
+      }
+
+      &-active {
+        color: #FAFAFA;
+        border-bottom: rem(3px) solid #F1CDB3;
+      }
+    }
+  }
+}
+//END HEADER
+
+
+//MAIN SECTION
+.main {
+  height: 908px;
+  background: url('../../assets/images/noise_transparent@2x.png') repeat, radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+  padding-top: rem(120px);
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+
+    &__info {
+      align-self: center;
+
+      &-title {
+        width: rem(310px);
+        font-size: rem(44px);
+        line-height: 130%;
+        color: #FFFFFF;
+        margin-bottom: rem(42px);
+      }
+
+      &-text {
+        width: rem(460px);
+        font-family: Arial, sans-serif;
+        font-size: 15px;
+        line-height: 160%;
+        color: #CDCDCD;
+        margin-bottom: rem(41px);
+      }
+    }
+
+    &__img {
+      line-height: 0;
+      align-self: flex-end;
+    }
+  }
+}
+//END MAIN SECTION
