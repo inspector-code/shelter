@@ -22,8 +22,9 @@ body {
   background-color: lightgray;
 }
 
-p {
-  margin-bottom: rem(25px);
+.h1 {
+  position: absolute;
+  opacity: 0;
 }
 
 .container {
@@ -106,7 +107,7 @@ header {
       font-family: $arial-san-serif;
       font-size: rem(13px);
       line-height: rem(15px);
-      letter-spacing: 0.1em;
+      letter-spacing: 0.103em;
       color: #FFFFFF;
     }
   }
@@ -120,6 +121,7 @@ header {
       font-family: $arial-san-serif;
       font-size: $font-size-text-15;
       line-height: 160%;
+      letter-spacing: 0.014em;
       color: #CDCDCD;
 
       li:hover {
@@ -148,10 +150,9 @@ header {
   &__content {
     display: flex;
     justify-content: space-between;
-    height: 100%;
 
     &__info {
-      align-self: center;
+      padding-top: rem(163px);
 
       &-title {
         width: rem(310px);
@@ -166,6 +167,7 @@ header {
         font-family: $arial-san-serif;
         font-size: $font-size-text-15;
         line-height: 160%;
+        letter-spacing: 0.0031em;
         color: #CDCDCD;
         margin-bottom: rem(41px);
       }
@@ -208,6 +210,10 @@ header {
         font-size: $font-size-text-15;
         line-height: 160%;
         color: #4C4C4C;
+
+        &-paragraph + &-paragraph {
+          margin-top: rem(25px);
+        }
       }
     }
   }
@@ -233,12 +239,251 @@ header {
 
     &__slider {
       display: flex;
+      align-items: center;
       margin-bottom: rem(60px);
 
       &__container {
+        display: flex;
         margin: 0 rem(53px);
+
+        &-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: rem(270px);
+          height: rem(435px);
+          background: #FAFAFA;
+          border-radius: rem(9px);
+
+          &:hover {
+            background: #FFFFFF;
+          }
+
+          &-image {
+            width: rem(200px);
+            height: rem(240px);
+            line-height: 0;
+            overflow: hidden;
+            margin-bottom: rem(30px);
+
+            img {
+              width: 100%;
+            }
+          }
+
+          &-title {
+            font-size: $font-size-subtitle-20;
+            line-height: rem(23px);
+            letter-spacing: 0.06em;
+            color: #545454;
+            margin-bottom: rem(30px);
+          }
+
+          &-button {
+            width: fit-content;
+            display: block;
+            padding: rem(13px) rem(43px);
+            border-radius: rem(100px);
+            border: 2px solid #F1CDB3;
+            text-decoration: none;
+            color: #292929;
+            font-size: rem(17px);
+            line-height: 130%;
+            letter-spacing: 0.06em;
+          }
+
+          & + & {
+            margin-left: rem(90px);
+          }
+        }
       }
     }
   }
 }
 //END OUR FRIENDS
+
+
+//HELP
+.help {
+  padding: rem(80px) 0 rem(100px);
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__title {
+      width: rem(310px);
+      text-align: center;
+      margin-bottom: rem(60px);
+    }
+
+    &-row-one {
+      margin-bottom: rem(55px);
+    }
+
+    &-row-one,
+    &-row-two {
+      display: flex;
+    }
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      & + & {
+        margin-left: rem(120px);
+      }
+
+      &-img {
+        margin-bottom: rem(30px);
+        line-height: 0;
+      }
+
+      &-title {
+        font-size: $font-size-subtitle-20;
+        line-height: 115%;
+        letter-spacing: 0.06em;
+        color: #545454;
+      }
+    }
+  }
+}
+//END HELP
+
+//CONTACTS
+.contacts{
+  padding: rem(80px) 0 rem(100px);
+  background: #F6F6F6;
+
+  &__content {
+    display: flex;
+    justify-content: center;
+
+    &__img {
+      margin: rem(12px) 0 rem(11px);
+      line-height: 0;
+    }
+
+    &__text {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      width: rem(380px);
+      margin-left: rem(30px);
+
+      &-title {
+        width: rem(300px);
+        margin-bottom: rem(20px);
+      }
+
+      &-bank-name {
+        font-size: $font-size-text-15;
+        line-height: 110%;
+        letter-spacing: 0.06em;
+        color: #545454;
+        margin-bottom: rem(20px);
+      }
+
+      &-credit-card {
+        margin-bottom: rem(20px);
+
+        &-content {
+          width: fit-content;
+          display: flex;
+          align-items: center;
+          padding: rem(10px) rem(15px);
+          background: #F1CDB3;
+          border-radius: rem(9px);
+
+          &-img {
+            line-height: 0;
+          }
+
+          &-number {
+            width: content-box;
+            margin-left: rem(15px);
+            font-size: $font-size-subtitle-20;
+            line-height: 115%;
+            letter-spacing: 0.06em;
+            color: #545454;
+          }
+        }
+      }
+
+      &-info {
+        font-family: $arial-san-serif;
+        font-style: italic;
+        font-size: rem(12px);
+        line-height: rem(18px);
+        color: #B2B2B2;
+      }
+    }
+  }
+}
+//END CONTACTS
+
+//FOOTER
+.main__footer {
+  background: url('../../assets/images/noise_transparent@2x.png') repeat, radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%), #211F20;
+  padding-top: rem(40px);
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+
+      &:nth-child(1) {
+        width: rem(278px);
+        padding-top: rem(22px);
+      }
+
+      &:nth-child(1) &-data {
+        margin-top: rem(38px);
+      }
+
+      &:nth-child(2) {
+        width: rem(302px);
+        padding-top: rem(22px);
+      }
+
+      &:nth-child(2) &-data {
+        margin-top: rem(33px);
+      }
+
+      &:nth-child(3) {
+        width: rem(300px);
+      }
+
+      &-title {
+        font-size: $font-size-title-35;
+        line-height: 130%;
+        letter-spacing: 0.0594em;
+        color: #FFFFFF;
+      }
+
+      &-data {
+        display: flex;
+        align-items: center;
+
+        &-text {
+          margin-left: rem(20px);
+          font-size: 20px;
+          line-height: 115%;
+          letter-spacing: 0.06em;
+          color: #F1CDB3;
+        }
+      }
+    }
+
+    &__img {
+      line-height: 0;
+    }
+  }
+}
+//END FOOTER
