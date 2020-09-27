@@ -622,12 +622,14 @@ header {
           .contacts__content__text-credit-card-content-img {
             line-height: 0; }
           .contacts__content__text-credit-card-content-number {
-            width: content-box;
+            text-decoration: none;
             margin-left: 0.9375rem;
             font-size: 1.25rem;
             line-height: 115%;
             letter-spacing: 0.06em;
             color: #545454; }
+            .contacts__content__text-credit-card-content-number:hover {
+              text-decoration: underline; }
       .contacts__content__text-info {
         font-family: "Arial", sans-serif;
         font-style: italic;
@@ -665,10 +667,14 @@ header {
         display: flex;
         align-items: center; }
         .main__footer__content__info-data-text {
-          margin-left: 1.25rem;
-          font-size: 20px;
-          line-height: 115%;
-          letter-spacing: 0.06em;
-          color: #F1CDB3; }
+          margin-left: 1.25rem; }
+          .main__footer__content__info-data-text a {
+            text-decoration: none;
+            color: #F1CDB3;
+            font-size: 20px;
+            line-height: 115%;
+            letter-spacing: 0.06em; }
+            .main__footer__content__info-data-text a:hover {
+              text-decoration: underline; }
     .main__footer__content__img {
       line-height: 0; }
