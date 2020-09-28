@@ -7,19 +7,9 @@
   src: url('../../assets/fonts/georgia.ttf');
 }
 
-@font-face {
-  font-family: Arial;
-  src: url('../../assets/fonts/arial.ttf');
-}
-
-
 //COMMON STYLES
 html {
   font-family: 'Georgia', serif;
-}
-
-body {
-  background-color: lightgray;
 }
 
 .h1 {
@@ -27,22 +17,17 @@ body {
   opacity: 0;
 }
 
-.container {
-  width: 1920px;
-  margin: 0 auto;
-  background-color: white;
-
-  &-inner {
-    width: 1200px;
+.container-inner {
+    width: 1280px;
     margin: 0 auto;
-  }
+    padding: 0 40px;
 }
 
 .common-button {
   width: fit-content;
   display: block;
-  padding: rem(15px) rem(45px);
-  border-radius: rem(100px);
+  padding: 15px 45px;
+  border-radius: 100px;
   background: #F1CDB3;
   text-decoration: none;
   color: #292929;
@@ -68,7 +53,7 @@ body {
   align-items: center;
   width: rem(52px);
   height: rem(52px);
-  border-radius: rem(100px);
+  border-radius: 100px;
   background: white;
   border: 2px solid #F1CDB3;
   text-decoration: none;
@@ -82,13 +67,15 @@ body {
 
 //HEADER
 header {
- margin-bottom: rem(60px);
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding-top: 60px;
 }
 
 .header__content {
   display: flex;
   justify-content: space-between;
-  padding-top: rem(60px);
 
   &__logo {
     display: flex;
@@ -100,14 +87,14 @@ header {
       line-height: 110%;
       letter-spacing: 0.06em;
       color: #F1CDB3;
-      margin-bottom: rem(10px);
+      margin-bottom: 10px;
     }
 
     &-subtitle {
       font-family: $arial-san-serif;
       font-size: rem(13px);
       line-height: rem(15px);
-      letter-spacing: 0.103em;
+      letter-spacing: 0.1em;
       color: #FFFFFF;
     }
   }
@@ -121,7 +108,7 @@ header {
       font-family: $arial-san-serif;
       font-size: $font-size-text-15;
       line-height: 160%;
-      letter-spacing: 0.014em;
+      letter-spacing: 0.005em;
       color: #CDCDCD;
 
       li:hover {
@@ -130,7 +117,7 @@ header {
       }
 
       li + li {
-        margin-left: rem(35px);
+        margin-left: 35px;
       }
 
       &-active {
@@ -145,6 +132,7 @@ header {
 
 //MAIN SECTION
 .main {
+  padding-top: 180px;
   background: url('../../assets/images/noise_transparent@2x.png') repeat, radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
 
   &__content {
@@ -152,14 +140,14 @@ header {
     justify-content: space-between;
 
     &__info {
-      padding-top: rem(163px);
+      padding-top: 163px;
 
       &-title {
         width: rem(310px);
         font-size: rem(44px);
         line-height: 130%;
         color: #FFFFFF;
-        margin-bottom: rem(42px);
+        margin-bottom: 42px;
       }
 
       &-text {
@@ -167,9 +155,8 @@ header {
         font-family: $arial-san-serif;
         font-size: $font-size-text-15;
         line-height: 160%;
-        letter-spacing: 0.0031em;
         color: #CDCDCD;
-        margin-bottom: rem(41px);
+        margin-bottom: 41px;
       }
     }
 
@@ -184,7 +171,8 @@ header {
 
 //ABOUT
 .about {
-  padding: rem(80px) 0 rem(100px);
+  padding: 80px 0 100px;
+  background: white;
 
   &__content {
     display: flex;
@@ -202,7 +190,7 @@ header {
 
       &-title {
         width: rem(370px);
-        margin-bottom: rem(25px);
+        margin-bottom: 25px;
       }
 
       &-text {
@@ -212,7 +200,7 @@ header {
         color: #4C4C4C;
 
         &-paragraph + &-paragraph {
-          margin-top: rem(25px);
+          margin-top: 25px;
         }
       }
     }
@@ -223,7 +211,7 @@ header {
 
 //OUR FRIENDS
 .our-friends {
-  padding: rem(80px) 0 rem(100px);
+  padding: 80px 0 100px;
   background: #F6F6F6;
 
   &__content {
@@ -234,17 +222,17 @@ header {
     &__title {
       width: rem(400px);
       text-align: center;
-      margin-bottom: rem(60px);
+      margin-bottom: 60px;
     }
 
     &__slider {
       display: flex;
       align-items: center;
-      margin-bottom: rem(60px);
+      margin-bottom: 60px;
 
       &__container {
         display: flex;
-        margin: 0 rem(53px);
+        margin: 0 53px;
 
         &-item {
           display: flex;
@@ -254,7 +242,7 @@ header {
           width: rem(270px);
           height: rem(435px);
           background: #FAFAFA;
-          border-radius: rem(9px);
+          border-radius: 9px;
 
           &:hover {
             background: #FFFFFF;
@@ -265,7 +253,7 @@ header {
             height: rem(240px);
             line-height: 0;
             overflow: hidden;
-            margin-bottom: rem(30px);
+            margin-bottom: 30px;
 
             img {
               width: 100%;
@@ -277,14 +265,14 @@ header {
             line-height: rem(23px);
             letter-spacing: 0.06em;
             color: #545454;
-            margin-bottom: rem(30px);
+            margin-bottom: 30px;
           }
 
           &-button {
             width: fit-content;
             display: block;
-            padding: rem(13px) rem(43px);
-            border-radius: rem(100px);
+            padding: 13px 43px;
+            border-radius: 100px;
             border: 2px solid #F1CDB3;
             text-decoration: none;
             color: #292929;
@@ -294,7 +282,7 @@ header {
           }
 
           & + & {
-            margin-left: rem(90px);
+            margin-left: 90px;
           }
         }
       }
@@ -306,7 +294,8 @@ header {
 
 //HELP
 .help {
-  padding: rem(80px) 0 rem(100px);
+  padding: 80px 0 45px;
+  background: white;
 
   &__content {
     display: flex;
@@ -316,29 +305,23 @@ header {
     &__title {
       width: rem(310px);
       text-align: center;
-      margin-bottom: rem(60px);
+      margin-bottom: 60px;
     }
 
-    &-row-one {
-      margin-bottom: rem(55px);
-    }
-
-    &-row-one,
-    &-row-two {
+    &-icons {
       display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     &__item {
       display: flex;
       flex-direction: column;
       align-items: center;
-
-      & + & {
-        margin-left: rem(120px);
-      }
+      margin: 0 60px 55px;
 
       &-img {
-        margin-bottom: rem(30px);
+        margin-bottom: 30px;
         line-height: 0;
       }
 
@@ -353,9 +336,10 @@ header {
 }
 //END HELP
 
+
 //CONTACTS
 .contacts{
-  padding: rem(80px) 0 rem(100px);
+  padding: 80px 0 100px;
   background: #F6F6F6;
 
   &__content {
@@ -363,7 +347,7 @@ header {
     justify-content: center;
 
     &__img {
-      margin: rem(12px) 0 rem(11px);
+      margin: 12px 0 11px;
       line-height: 0;
     }
 
@@ -372,11 +356,11 @@ header {
       flex-direction: column;
       justify-content: flex-end;
       width: rem(380px);
-      margin-left: rem(30px);
+      margin-left: 30px;
 
       &-title {
         width: rem(300px);
-        margin-bottom: rem(20px);
+        margin-bottom: 20px;
       }
 
       &-bank-name {
@@ -384,19 +368,19 @@ header {
         line-height: 110%;
         letter-spacing: 0.06em;
         color: #545454;
-        margin-bottom: rem(20px);
+        margin-bottom: 20px;
       }
 
       &-credit-card {
-        margin-bottom: rem(20px);
+        margin-bottom: 20px;
 
         &-content {
           width: fit-content;
           display: flex;
           align-items: center;
-          padding: rem(10px) rem(15px);
+          padding: 10px 15px;
           background: #F1CDB3;
-          border-radius: rem(9px);
+          border-radius: 9px;
 
           &-img {
             line-height: 0;
@@ -404,7 +388,7 @@ header {
 
           &-number {
             text-decoration: none;
-            margin-left: rem(15px);
+            margin-left: 15px;
             font-size: $font-size-subtitle-20;
             line-height: 115%;
             letter-spacing: 0.06em;
@@ -429,10 +413,11 @@ header {
 }
 //END CONTACTS
 
+
 //FOOTER
 .main__footer {
   background: url('../../assets/images/noise_transparent@2x.png') repeat, radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%), #211F20;
-  padding-top: rem(40px);
+  padding-top: 40px;
 
   &__content {
     display: flex;
@@ -444,20 +429,20 @@ header {
 
       &:nth-child(1) {
         width: rem(278px);
-        padding-top: rem(22px);
+        padding-top: 22px;
       }
 
       &:nth-child(1) &-data {
-        margin-top: rem(38px);
+        margin-top: 38px;
       }
 
       &:nth-child(2) {
         width: rem(302px);
-        padding-top: rem(22px);
+        padding-top: 22px;
       }
 
       &:nth-child(2) &-data {
-        margin-top: rem(33px);
+        margin-top: 33px;
       }
 
       &:nth-child(3) {
@@ -476,7 +461,7 @@ header {
         align-items: center;
 
         &-text {
-          margin-left: rem(20px);
+          margin-left: 20px;
 
           a {
             text-decoration: none;
