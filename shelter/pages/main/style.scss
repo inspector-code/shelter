@@ -127,7 +127,6 @@ header {
     }
   }
 }
-
 //END HEADER
 
 
@@ -239,11 +238,10 @@ header {
           display: flex;
           flex-direction: column;
           align-items: center;
-          justify-content: center;
           width: rem(270px);
-          height: rem(435px);
           background: #FAFAFA;
           border-radius: 9px;
+          overflow: hidden;
 
           &:hover {
             background: #FFFFFF;
@@ -251,8 +249,8 @@ header {
           }
 
           &-image {
-            width: rem(200px);
-            height: rem(240px);
+            width: 100%;
+            height: rem(270px);
             line-height: 0;
             overflow: hidden;
             margin-bottom: 30px;
@@ -271,8 +269,7 @@ header {
           }
 
           &-button {
-            width: fit-content;
-            display: block;
+            display: inline-block;
             padding: 13px 43px;
             border-radius: 100px;
             border: 2px solid #F1CDB3;
@@ -281,6 +278,7 @@ header {
             font-size: rem(17px);
             line-height: 130%;
             letter-spacing: 0.06em;
+            margin-bottom: 30px;
           }
 
           & + & {
@@ -430,12 +428,20 @@ header {
       flex-direction: column;
       justify-content: space-between;
       height: rem(234px);
-      padding-top: 16px;
+      margin-top: 16px;
+
+      &:nth-child(1) {
+        width: rem(278px);
+      }
+
+      &:nth-child(2) {
+        width: rem(302px);
+      }
 
       &-title {
         font-size: $font-size-title-35;
         line-height: 130%;
-        letter-spacing: 0.06em;
+        letter-spacing: 0.05943em;
         color: #FFFFFF;
       }
 

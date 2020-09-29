@@ -515,17 +515,16 @@ header {
           display: flex;
           flex-direction: column;
           align-items: center;
-          justify-content: center;
           width: 16.875rem;
-          height: 27.1875rem;
           background: #FAFAFA;
-          border-radius: 9px; }
+          border-radius: 9px;
+          overflow: hidden; }
           .our-friends__content__slider__container-item:hover {
             background: #FFFFFF;
             box-shadow: 0 2px 35px 14px rgba(13, 13, 13, 0.04); }
           .our-friends__content__slider__container-item-image {
-            width: 12.5rem;
-            height: 15rem;
+            width: 100%;
+            height: 16.875rem;
             line-height: 0;
             overflow: hidden;
             margin-bottom: 30px; }
@@ -538,8 +537,7 @@ header {
             color: #545454;
             margin-bottom: 30px; }
           .our-friends__content__slider__container-item-button {
-            width: fit-content;
-            display: block;
+            display: inline-block;
             padding: 13px 43px;
             border-radius: 100px;
             border: 2px solid #F1CDB3;
@@ -547,7 +545,8 @@ header {
             color: #292929;
             font-size: 1.0625rem;
             line-height: 130%;
-            letter-spacing: 0.06em; }
+            letter-spacing: 0.06em;
+            margin-bottom: 30px; }
           .our-friends__content__slider__container-item + .our-friends__content__slider__container-item {
             margin-left: 90px; }
 
@@ -642,11 +641,15 @@ header {
       flex-direction: column;
       justify-content: space-between;
       height: 14.625rem;
-      padding-top: 16px; }
+      margin-top: 16px; }
+      .main__footer__content__list:nth-child(1) {
+        width: 17.375rem; }
+      .main__footer__content__list:nth-child(2) {
+        width: 18.875rem; }
       .main__footer__content__list-title {
         font-size: 2.1875rem;
         line-height: 130%;
-        letter-spacing: 0.06em;
+        letter-spacing: 0.05943em;
         color: #FFFFFF; }
       .main__footer__content__list a {
         display: flex;
