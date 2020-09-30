@@ -70,7 +70,7 @@ header {
   position: absolute;
   left: 0;
   right: 0;
-  padding-top: 60px;
+  padding: 60px 0 0 0;
 }
 
 .header__content {
@@ -105,15 +105,19 @@ header {
 
     &__items {
       display: flex;
-      font-family: $arial-san-serif;
-      font-size: $font-size-text-15;
-      line-height: 160%;
-      letter-spacing: 0.005em;
       color: #CDCDCD;
+
+      a {
+        text-decoration: none;
+        color: inherit;
+        font-family: $arial-san-serif;
+        font-size: $font-size-text-15;
+        line-height: 160%;
+        letter-spacing: 0.005em;
+      }
 
       li:hover {
         color: #FAFAFA;
-        cursor: pointer;
       }
 
       li + li {
@@ -234,6 +238,10 @@ header {
         display: flex;
         margin: 0 53px;
 
+        .main-friend + .main-friend {
+          margin-left: 90px;
+        }
+
         &-item {
           display: flex;
           flex-direction: column;
@@ -279,10 +287,6 @@ header {
             line-height: 130%;
             letter-spacing: 0.06em;
             margin-bottom: 30px;
-          }
-
-          & + & {
-            margin-left: 90px;
           }
         }
       }

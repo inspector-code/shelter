@@ -1,0 +1,105 @@
+@import "../../assets/css/variables.scss";
+
+//COMMON STYLES
+
+//END COMMON STYLES
+
+//HEADER
+.pets__header {
+  position: sticky;
+  top: 0;
+  background: #FFFFFF;
+  padding: 30px 0;
+
+  &-title {
+    color: #545454;
+  }
+
+  &-subtitle {
+    color: #292929;
+  }
+
+  &__items {
+    color: #545454;
+
+    li:hover {
+      color: #292929;
+    }
+
+    &-active {
+      color: #292929;
+      outline: none;
+      border-bottom: rem(3px) solid #F1CDB3;
+    }
+  }
+}
+//END HEADER
+
+
+//FRIENDS LIST
+.friends__list {
+  padding: 80px 0 100px;
+  background: #F6F6F6;
+
+  &__title {
+    width: rem(400px);
+    text-align: center;
+    margin: 0 auto 45px;
+  }
+
+  &__content {
+    padding: 15px 0;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 40px;
+    grid-row-gap: 30px;
+    margin-bottom: 45px;
+  }
+
+  &__paginator {
+    display: flex;
+    justify-content: center;
+
+    .pag_btn {
+      width: 52px;
+      height: 52px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      border: 2px solid #F1CDB3;
+      border-radius: 100px;
+      font-size: $font-size-subtitle-20;
+      line-height: 115%;
+      letter-spacing: 0.06em;
+      color: #292929;
+      cursor: pointer;
+
+      & + .pag_btn {
+        margin-left: 20px;
+      }
+
+      &:hover:not(:disabled):not(.pag-active-button) {
+        border: 2px solid #FDDCC4;
+        background: #FDDCC4;
+      }
+
+      &:disabled {
+        border: 2px solid #CDCDCD;
+        cursor: default;
+
+        path {
+          fill: #CDCDCD;
+        }
+      }
+    }
+
+    .pag-active-button {
+      background: #F1CDB3;
+    }
+  }
+}
+//END FRIENDS LIST
+
