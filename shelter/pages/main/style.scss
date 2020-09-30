@@ -50,16 +50,25 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0;
   width: rem(52px);
   height: rem(52px);
   border-radius: 100px;
   background: white;
   border: 2px solid #F1CDB3;
-  text-decoration: none;
   cursor: pointer;
 
-  &:hover {
+  &:hover:not(:disabled) {
     background: #F1CDB3;
+  }
+
+  &:disabled {
+    cursor: default;
+    border: 2px solid #CDCDCD;
+
+    path {
+      fill: #CDCDCD;
+    }
   }
 }
 //END COMMON STYLES
