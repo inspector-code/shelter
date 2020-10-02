@@ -33,6 +33,7 @@ html {
   font-size: rem(17px);
   line-height: 130%;
   letter-spacing: 0.06em;
+  transition: .1s linear;
 
   &:hover {
     background: #FDDCC4;
@@ -57,6 +58,7 @@ html {
   background: white;
   border: 2px solid #F1CDB3;
   cursor: pointer;
+  transition: .1s linear;
 
   &:hover:not(:disabled) {
     background: #F1CDB3;
@@ -259,6 +261,7 @@ header {
           background: #FAFAFA;
           border-radius: 9px;
           overflow: hidden;
+          transition: .1s linear;
 
           &:hover {
             background: #FFFFFF;
@@ -296,6 +299,12 @@ header {
             line-height: 130%;
             letter-spacing: 0.06em;
             margin-bottom: 30px;
+            transition: .1s linear;
+
+            &:hover {
+              background: #FDDCC4;
+              border: 2px solid #FDDCC4;
+            }
           }
         }
       }

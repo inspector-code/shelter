@@ -48,7 +48,8 @@
       line-height: 115%;
       letter-spacing: 0.06em;
       color: #292929;
-      cursor: pointer; }
+      cursor: pointer;
+      transition: .1s linear; }
       .friends__list__paginator .pag_btn + .pag_btn {
         margin-left: 20px; }
       .friends__list__paginator .pag_btn:hover:not(:disabled):not(.pag-active-button) {
