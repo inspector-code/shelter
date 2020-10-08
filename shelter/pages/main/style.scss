@@ -211,10 +211,9 @@ header {
         margin-bottom: 42px;
 
         @media (max-width: $width-767) {
-          margin-left: auto;
-          margin-right: auto;
           width: rem(300px);
           font-size: $font-size-title-25;
+          letter-spacing: 0.06em;
           text-align: center;
         }
       }
@@ -317,8 +316,10 @@ header {
         margin-bottom: 25px;
 
         @media (max-width: $width-767) {
-          width: rem(300px);
+          width: rem(290px);
           text-align: center;
+          margin-right: auto;
+          margin-left: auto;
         }
       }
 
@@ -335,6 +336,10 @@ header {
 
         &-paragraph + &-paragraph {
           margin-top: 25px;
+
+          @media (max-width: $width-767) {
+            margin-top: 22px;
+          }
         }
       }
     }
@@ -381,7 +386,7 @@ header {
       @media (max-width: $width-767) {
         flex-wrap: wrap;
         justify-content: center;
-        margin-bottom: 20px;
+        margin-bottom: 42px;
       }
 
       &__container {
@@ -504,6 +509,7 @@ header {
 
       @media (max-width: $width-767) {
         justify-content: space-between;
+        padding: 0 5px;
       }
     }
 
@@ -582,7 +588,6 @@ header {
       @media (max-width: $width-767) {
         img {
           width: 260px;
-          height: 135.2px;
         }
       }
     }
@@ -626,7 +631,7 @@ header {
           font-size: $font-size-text-15;
           text-align: center;
           line-height: 160%;
-          letter-spacing: 0.02em;
+          letter-spacing: 0;
         }
       }
 

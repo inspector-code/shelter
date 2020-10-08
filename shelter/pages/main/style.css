@@ -505,10 +505,9 @@ header {
         margin-bottom: 42px; }
         @media (max-width: 47.9375rem) {
           .main__content__info-title {
-            margin-left: auto;
-            margin-right: auto;
             width: 18.75rem;
             font-size: 1.5625rem;
+            letter-spacing: 0.06em;
             text-align: center; } }
       .main__content__info-text {
         width: 28.75rem;
@@ -575,8 +574,10 @@ header {
         margin-bottom: 25px; }
         @media (max-width: 47.9375rem) {
           .about__content__info-title {
-            width: 18.75rem;
-            text-align: center; } }
+            width: 18.125rem;
+            text-align: center;
+            margin-right: auto;
+            margin-left: auto; } }
       .about__content__info-text {
         font-family: "Arial", sans-serif;
         font-size: 0.9375rem;
@@ -588,6 +589,9 @@ header {
             padding: 0 15px; } }
         .about__content__info-text-paragraph + .about__content__info-text-paragraph {
           margin-top: 25px; }
+          @media (max-width: 47.9375rem) {
+            .about__content__info-text-paragraph + .about__content__info-text-paragraph {
+              margin-top: 22px; } }
 
 .our-friends {
   padding: 80px 0 100px;
@@ -617,7 +621,7 @@ header {
         .our-friends__content__slider {
           flex-wrap: wrap;
           justify-content: center;
-          margin-bottom: 20px; } }
+          margin-bottom: 42px; } }
       .our-friends__content__slider__container {
         display: flex;
         width: 990px;
@@ -705,7 +709,8 @@ header {
       justify-content: center; }
       @media (max-width: 47.9375rem) {
         .help__content-icons {
-          justify-content: space-between; } }
+          justify-content: space-between;
+          padding: 0 5px; } }
     .help__content__item {
       display: flex;
       flex-direction: column;
@@ -757,8 +762,7 @@ header {
       line-height: 0; }
       @media (max-width: 47.9375rem) {
         .contacts__content__img img {
-          width: 260px;
-          height: 135.2px; } }
+          width: 260px; } }
     .contacts__content__text {
       display: flex;
       flex-direction: column;
@@ -792,7 +796,7 @@ header {
             font-size: 0.9375rem;
             text-align: center;
             line-height: 160%;
-            letter-spacing: 0.02em; } }
+            letter-spacing: 0; } }
       .contacts__content__text-credit-card {
         margin-bottom: 20px; }
         @media (max-width: 47.9375rem) {
