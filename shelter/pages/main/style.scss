@@ -559,6 +559,10 @@ header {
   padding: 80px 0 100px;
   background: #F6F6F6;
 
+  @media (max-width: $width-767) {
+    padding: 42px 0;
+  }
+
   &__content {
     display: flex;
     justify-content: center;
@@ -574,6 +578,13 @@ header {
 
     &__img {
       line-height: 0;
+
+      @media (max-width: $width-767) {
+        img {
+          width: 260px;
+          height: 135.2px;
+        }
+      }
     }
 
     &__text {
@@ -589,9 +600,18 @@ header {
         margin-bottom: 60px;
       }
 
+      @media (max-width: $width-767) {
+        width: 100%;
+        margin-bottom: 42px;
+      }
+
       &-title {
         width: rem(300px);
         margin-bottom: 20px;
+
+        @media (max-width: $width-767) {
+          text-align: center;
+        }
       }
 
       &-bank-name {
@@ -600,14 +620,25 @@ header {
         letter-spacing: 0.06em;
         color: #545454;
         margin-bottom: 20px;
+
+        @media (max-width: $width-767) {
+          font-family: $arial-san-serif;
+          font-size: $font-size-text-15;
+          text-align: center;
+          line-height: 160%;
+          letter-spacing: 0.02em;
+        }
       }
 
       &-credit-card {
         margin-bottom: 20px;
 
+        @media (max-width: $width-767) {
+          align-self: center;
+        }
+
         &-content {
-          width: fit-content;
-          display: flex;
+          display: inline-flex;
           align-items: center;
           padding: 10px 15px;
           background: #F1CDB3;
@@ -625,6 +656,11 @@ header {
             letter-spacing: 0.06em;
             color: #545454;
 
+            @media (max-width: $width-767) {
+              font-size: $font-size-text-15;
+              line-height: 110%;
+            }
+
             &:hover {
               text-decoration: underline;
             }
@@ -638,6 +674,11 @@ header {
         font-size: rem(12px);
         line-height: rem(18px);
         color: #B2B2B2;
+
+        @media (max-width: $width-767) {
+          text-align: justify;
+          padding: 0 10px;
+        }
       }
     }
   }
@@ -675,8 +716,16 @@ header {
         margin-bottom: 65px;
       }
 
+      @media (max-width: $width-767) {
+        margin-bottom: 0;
+      }
+
       &:nth-child(1) {
         width: rem(278px);
+
+        @media (max-width: $width-767) {
+          margin-bottom: 40px;
+        }
       }
 
       &:nth-child(2) {
@@ -685,6 +734,12 @@ header {
         @media (max-width: $width-1279) {
           margin-left: 60px;
         }
+
+        @media (max-width: $width-767) {
+          width: rem(300px);
+          margin-left: 0;
+          margin-bottom: 92px;
+        }
       }
 
       &-title {
@@ -692,6 +747,10 @@ header {
         line-height: 130%;
         letter-spacing: 0.05943em;
         color: #FFFFFF;
+
+        @media (max-width: $width-767) {
+          text-align: center;
+        }
       }
 
       a {
@@ -719,6 +778,12 @@ header {
 
     &__img {
       line-height: 0;
+
+      @media (max-width: $width-767) {
+        img {
+          width: 260px;
+        }
+      }
     }
   }
 }
