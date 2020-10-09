@@ -31,23 +31,33 @@
   .friends__list__title {
     width: 25rem;
     text-align: center;
-    margin: 0 auto 45px; }
+    margin: 0 auto 30px; }
+    @media (max-width: 79.9375rem) {
+      .friends__list__title {
+        margin: 0 auto; } }
     @media (max-width: 47.9375rem) {
       .friends__list__title {
         width: auto;
-        margin: 0 auto 42px; } }
+        margin: 0 auto 12px; } }
   .friends__list__content {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding-top: 30px; }
+    padding-top: 30px;
+    margin-bottom: 30px; }
     .friends__list__content .our-friends__content__slider__container-item {
       margin-bottom: 30px; }
     @media (max-width: 79.9375rem) {
       .friends__list__content {
         padding: 30px 64px 0;
         overflow: hidden;
-        height: 1425px; } }
+        height: 1425px;
+        margin-bottom: 10px; } }
+    @media (max-width: 47.9375rem) {
+      .friends__list__content {
+        justify-content: center;
+        padding: 30px 0 0;
+        margin-bottom: 12px; } }
   .friends__list__paginator {
     display: flex;
     justify-content: center; }
@@ -69,6 +79,9 @@
       transition: .1s linear; }
       .friends__list__paginator .pag_btn + .pag_btn {
         margin-left: 20px; }
+        @media (max-width: 47.9375rem) {
+          .friends__list__paginator .pag_btn + .pag_btn {
+            margin-left: 10px; } }
       .friends__list__paginator .pag_btn:hover:not(:disabled):not(.pag-active-button) {
         border: 2px solid #FDDCC4;
         background: #FDDCC4; }
