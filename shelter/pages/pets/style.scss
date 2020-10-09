@@ -19,6 +19,12 @@
     color: #292929;
   }
 
+  &__hamburger__btn > span,
+  &__hamburger__btn > span:before,
+  &__hamburger__btn > span:after {
+    background-color: black;
+  }
+
   &__items {
     color: #545454;
 
@@ -27,7 +33,6 @@
     }
 
     &-active {
-      color: #292929;
       outline: none;
       border-bottom: rem(3px) solid #F1CDB3;
     }
@@ -41,20 +46,43 @@
   padding: 80px 0 100px;
   background: #F6F6F6;
 
+  @media (max-width: $width-1279) {
+    padding: 80px 0 76px;
+  }
+
+  @media (max-width: $width-767) {
+    padding: 42px 0;
+  }
+
   &__title {
     width: rem(400px);
     text-align: center;
     margin: 0 auto 45px;
+
+    @media (max-width: $width-767) {
+      width: auto;
+      margin: 0 auto 42px;
+    }
   }
 
   &__content {
-    padding: 15px 0;
-    display: grid;
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: repeat(4, 1fr);
-    grid-column-gap: 40px;
-    grid-row-gap: 30px;
-    margin-bottom: 45px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 30px;
+
+    & .our-friends__content__slider__container-item {
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: $width-1279) {
+      padding: 30px 64px 0;
+      overflow: hidden;
+      height: 1425px;
+    }
+
+    @media (max-width: $width-767) {
+    }
   }
 
   &__paginator {

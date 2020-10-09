@@ -7,30 +7,47 @@
     color: #545454; }
   .pets__header-subtitle {
     color: #292929; }
+  .pets__header__hamburger__btn > span,
+  .pets__header__hamburger__btn > span:before,
+  .pets__header__hamburger__btn > span:after {
+    background-color: black; }
   .pets__header__items {
     color: #545454; }
     .pets__header__items li:hover {
       color: #292929; }
     .pets__header__items-active {
-      color: #292929;
       outline: none;
       border-bottom: 0.1875rem solid #F1CDB3; }
 
 .friends__list {
   padding: 80px 0 100px;
   background: #F6F6F6; }
+  @media (max-width: 79.9375rem) {
+    .friends__list {
+      padding: 80px 0 76px; } }
+  @media (max-width: 47.9375rem) {
+    .friends__list {
+      padding: 42px 0; } }
   .friends__list__title {
     width: 25rem;
     text-align: center;
     margin: 0 auto 45px; }
+    @media (max-width: 47.9375rem) {
+      .friends__list__title {
+        width: auto;
+        margin: 0 auto 42px; } }
   .friends__list__content {
-    padding: 15px 0;
-    display: grid;
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: repeat(4, 1fr);
-    grid-column-gap: 40px;
-    grid-row-gap: 30px;
-    margin-bottom: 45px; }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 30px; }
+    .friends__list__content .our-friends__content__slider__container-item {
+      margin-bottom: 30px; }
+    @media (max-width: 79.9375rem) {
+      .friends__list__content {
+        padding: 30px 64px 0;
+        overflow: hidden;
+        height: 1425px; } }
   .friends__list__paginator {
     display: flex;
     justify-content: center; }
