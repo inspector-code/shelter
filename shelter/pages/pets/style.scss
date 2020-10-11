@@ -6,7 +6,7 @@
 
 //HEADER
 .pets__header {
-  position: sticky;
+  position: fixed;
   top: 0;
   background: #FFFFFF;
   padding: 30px 0;
@@ -43,15 +43,15 @@
 
 //FRIENDS LIST
 .friends__list {
-  padding: 80px 0 100px;
+  padding: 200px 0 100px;
   background: #F6F6F6;
 
   @media (max-width: $width-1279) {
-    padding: 80px 0 76px;
+    padding: 200px 0 76px;
   }
 
   @media (max-width: $width-767) {
-    padding: 42px 0;
+    padding: 162px 0 42px;
   }
 
   &__title {

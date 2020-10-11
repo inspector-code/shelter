@@ -185,7 +185,7 @@ header {
         visibility: hidden;
         top: 0;
         left: -100%;
-        width: 250px;
+        width: 230px;
         height: 100%;
         margin: 0;
         padding: 80px 0;
@@ -318,10 +318,11 @@ header {
         margin-bottom: 42px;
 
         @media (max-width: $width-767) {
-          width: rem(300px);
+          width: rem(250px);
           font-size: $font-size-title-25;
           letter-spacing: 0.06em;
           text-align: center;
+          margin: 0 auto 42px auto;
         }
       }
 
@@ -408,7 +409,7 @@ header {
       margin-left: 120px;
 
       @media (max-width: $width-1279) {
-        width: rem(436px);
+        width: rem(430px);
         margin-left: 0;
         order: 1;
         margin-bottom: 80px;
@@ -483,6 +484,7 @@ header {
       margin-bottom: 25px;
 
       @media (max-width: $width-767) {
+        width: rem(300px);
         margin-bottom: 7px;
       }
     }
@@ -537,7 +539,7 @@ header {
 
           &:hover {
             background: #FFFFFF;
-            box-shadow: 0 2px 35px 14px rgba(13, 13, 13, 0.04);
+            box-shadow: 0 2px 35px 5px rgba(13, 13, 13, 0.04);
           }
 
           &-image {
@@ -726,7 +728,9 @@ header {
         margin-bottom: 20px;
 
         @media (max-width: $width-767) {
+          width: rem(220px);
           text-align: center;
+          margin: 0 auto 20px auto;
         }
       }
 
@@ -834,14 +838,15 @@ header {
       }
 
       @media (max-width: $width-767) {
-        margin-bottom: 0;
+        height: rem(208px);
+        margin-bottom: 40px;
       }
 
       &:nth-child(1) {
         width: rem(278px);
 
         @media (max-width: $width-767) {
-          margin-bottom: 40px;
+          align-items: center;
         }
       }
 
@@ -853,9 +858,9 @@ header {
         }
 
         @media (max-width: $width-767) {
+          height: rem(222px);
           width: rem(300px);
           margin-left: 0;
-          margin-bottom: 92px;
         }
       }
 
@@ -866,6 +871,9 @@ header {
         color: #FFFFFF;
 
         @media (max-width: $width-767) {
+          width: rem(240px);
+          margin: 0 auto;
+          font-size: $font-size-title-25;
           text-align: center;
         }
       }

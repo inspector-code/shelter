@@ -1,5 +1,5 @@
 .pets__header {
-  position: sticky;
+  position: fixed;
   top: 0;
   background: #FFFFFF;
   padding: 30px 0; }
@@ -20,14 +20,14 @@
       border-bottom: 0.1875rem solid #F1CDB3; }
 
 .friends__list {
-  padding: 80px 0 100px;
+  padding: 200px 0 100px;
   background: #F6F6F6; }
   @media (max-width: 79.9375rem) {
     .friends__list {
-      padding: 80px 0 76px; } }
+      padding: 200px 0 76px; } }
   @media (max-width: 47.9375rem) {
     .friends__list {
-      padding: 42px 0; } }
+      padding: 162px 0 42px; } }
   .friends__list__title {
     width: 25rem;
     text-align: center;
