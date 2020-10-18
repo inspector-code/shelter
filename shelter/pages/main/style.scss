@@ -105,6 +105,13 @@ header {
   @media (max-width: $width-1279) {
     padding-top: 30px;
   }
+
+  @media (max-width: $width-767) {
+    .header-active-menu {
+      position: fixed;
+      right: 0;
+    }
+  }
 }
 
 .header__content {
@@ -115,6 +122,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 1;
 
     &-title {
       font-size: rem(32px);
@@ -137,109 +145,92 @@ header {
     display: flex;
     align-items: center;
 
-    &__hamburger-menu {
+    @media (max-width: $width-767) {
+      .hamburger-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(41, 41, 41, 0.6);
+        transition: .5s;
+
+        &-hidden {
+          visibility: hidden;
+          background-color: rgba(41, 41, 41, 0);
+        }
+
+        &__box {
+          position: fixed;
+          right: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 320px;
+          height: 100%;
+          background: rgba(41, 41, 41, 1);
+          transition: 0.5s;
+
+          &-hidden {
+            right: -100%;
+          }
+        }
+      }
+    }
+
+    &__btn {
       display: none;
+      align-items: center;
+      position: relative;
+      width: 30px;
+      height: 22px;
       margin-right: 43px;
+      cursor: pointer;
+      z-index: 1;
 
       @media (max-width: $width-767) {
-        display: block;
-      }
-
-      #hamburger-menu__toggle {
-        display: none;
-      }
-
-      &__btn {
         display: flex;
-        align-items: center;
-        position: relative;
-        width: 30px;
-        height: 22px;
-        cursor: pointer;
-        z-index: 1;
       }
+    }
 
-      &__btn > span,
-      &__btn > span:before,
-      &__btn > span:after {
-        display: block;
-        position: absolute;
-        width: 100%;
-        height: 2px;
-        background-color: #F1CDB3;
-      }
+    &__btn > span,
+    &__btn > span:before,
+    &__btn > span:after {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: #F1CDB3;
+    }
 
-      &__btn > span:before {
-        content: '';
-        top: -10px;
-      }
+    &__btn > span:before {
+      content: '';
+      top: -10px;
+    }
 
-      &__btn > span:after {
-        content: '';
-        top: 10px;
-      }
+    &__btn > span:after {
+      content: '';
+      top: 10px;
+    }
 
-      &__box {
-        display: block;
-        position: fixed;
-        visibility: hidden;
-        top: 0;
-        left: -100%;
-        width: 230px;
-        height: 100%;
-        margin: 0;
-        padding: 80px 0;
-        list-style: none;
-        text-align: center;
-        background-color: #ECEFF1;
-        box-shadow: 1px 0 6px rgba(0, 0, 0, .2);
-      }
+    .hamburger-menu__active > span {
+      transform: rotate(45deg);
+    }
 
-      &__item {
-        display: block;
-        padding: 12px 24px;
-        color: #3A302C;
-        font-family: $arial-san-serif;
-        font-size: $font-size-subtitle-20;
-        text-decoration: none;
-      }
+    .hamburger-menu__active > span:before {
+      top: 0;
+      transform: rotate(0);
+    }
 
-      &__item:hover {
-        background-color: #CFD8DC;
-      }
+    .hamburger-menu__active > span:after {
+      top: 0;
+      transform: rotate(90deg);
+    }
 
-      #hamburger-menu__toggle:checked ~ &__btn > span {
-        transform: rotate(45deg);
-      }
-
-      #hamburger-menu__toggle:checked ~ &__btn > span:before {
-        top: 0;
-        transform: rotate(0);
-      }
-
-      #hamburger-menu__toggle:checked ~ &__btn > span:after {
-        top: 0;
-        transform: rotate(90deg);
-      }
-
-      #hamburger-menu__toggle:checked ~ &__box {
-        visibility: visible;
-        left: 0;
-      }
-
-      &__btn > span,
-      &__btn > span:before,
-      &__btn > span:after {
-        transition-duration: .25s;
-      }
-
-      &__box {
-        transition-duration: .25s;
-      }
-
-      &__item {
-        transition-duration: .25s;
-      }
+    &__btn > span,
+    &__btn > span:before,
+    &__btn > span:after {
+      transition-duration: .25s;
     }
 
     &__items {
@@ -247,7 +238,9 @@ header {
       color: #CDCDCD;
 
       @media (max-width: $width-767) {
-        display: none;
+        display: inline-flex;
+        flex-direction: column;
+        text-align: center;
       }
 
       a {
@@ -257,6 +250,10 @@ header {
         font-size: $font-size-text-15;
         line-height: 160%;
         letter-spacing: 0.005em;
+
+        @media (max-width: $width-767) {
+          font-size: rem(32px);
+        }
       }
 
       li:hover {
@@ -265,6 +262,11 @@ header {
 
       li + li {
         margin-left: 35px;
+
+        @media (max-width: $width-767) {
+          margin-left: 0;
+          margin-top: 40px;
+        }
       }
 
       &-active {
