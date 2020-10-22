@@ -20,52 +20,8 @@ hamburgerMenu.addEventListener('click', () => {
     hamburgerMenuButton.classList.remove('hamburger-menu__active')
 })
 
-//Slider
-// const sliderContainer = document.querySelector('.slider-container')
-// const sliderTrack = document.querySelector('.slider-track')
-// const prevBtn = document.querySelector('.slider-button-prev')
-// const nextBtn = document.querySelector('.slider-button-next')
-// const sliderWrapper = document.querySelector('.slider-wrapper')
-// const sliderFooter = document.querySelector('.slider-footer')
-//
-// const slidesCount = sliderTrack.children.length
-// const slideWidth = sliderContainer.clientWidth
-//
-// let slideNumber = 1
-// let position = 0
-//
-// function trackIt(number) {
-//     position = number * slideWidth - slideWidth
-//     slideNumber = number
-//     sliderTrack.style.transform = `translateX(-${position}px)`
-//     sliderFooter.children[slideNumber - 1].classList.add('active-point')
-// }
-//
-// function trackDirection(direction) {
-//     switch (direction) {
-//         case 'prev':
-//             slideNumber === 1 ? slideNumber = slidesCount : --slideNumber
-//             trackIt(slideNumber)
-//             break
-//         case 'next':
-//             slideNumber === slidesCount ? slideNumber = 1 : ++slideNumber
-//             trackIt(slideNumber)
-//             break
-//         default:
-//             break
-//     }
-// }
-//
-// nextBtn.addEventListener('click', () => {
-//     trackDirection('next')
-// })
-//
-// prevBtn.addEventListener('click', () => {
-//     trackDirection('prev')
-// })
-
 //SLIDER
-const sliderContainer = document.querySelector('.our-friends__content__slider__container')
+const sliderTrack = document.querySelector('.slider__track')
 const src = '../../assets/json/pets.json'
 
 async function getPets() {
@@ -90,22 +46,33 @@ async function getPets() {
         return tempArr
     })()
 
-    setPets(sort863(fullPetsList))
-
-    for (let i = 0; i < (fullPetsList.length / 6); i++) {
-        const stepList = fullPetsList.slice(i * 6, (i * 6) + 6)
-
-        for (let j = 0; j < 6; j++) {
-            stepList.forEach((item, ind) => {
-                if (item.name === stepList[j].name && (ind !== j)) {
-                    sliderContainer.children[(i * 6) + j].style.border = '5px solid red'
+    function sort863(list) {
+        let unique8List = []
+        let length = list.length
+        for (let i = 0; i < length / 8; i++) {
+            const uniqueStepList = []
+            for (let j = 0; j < list.length; j++) {
+                if (uniqueStepList.length >= 8) {
+                    break
                 }
-            })
+                const isUnique = !uniqueStepList.some((item) => {
+                    return item.name === list[j].name
+                })
+                if (isUnique) {
+                    uniqueStepList.push(list[j])
+                    list.splice(j, 1)
+                    j--
+                }
+            }
+            unique8List = [...unique8List, ...uniqueStepList]
         }
+        list = unique8List
+        list = sort6recursively(list)
+        return list
     }
 
-    function sort863(list) {
-        let length = list.length
+    function sort6recursively(list) {
+        const length = list.length
 
         for (let i = 0; i < (length / 6); i++) {
             const stepList = fullPetsList.slice(i * 6, (i * 6) + 6)
@@ -120,13 +87,17 @@ async function getPets() {
                     const which8OfList = Math.trunc(ind / 8)
 
                     list.splice(which8OfList * 8, 0, list.splice(ind, 1)[0])
-                    i-=2
-                    break
+
+                    sort6recursively(list)
                 }
             }
         }
         return list
     }
+
+    const randomArr = sort863(fullPetsList)
+    setPets(randomArr)
+    return randomArr
 }
 
 function setPets(data) {
@@ -154,7 +125,60 @@ function setPets(data) {
 
         fragment.append(containerItem)
     })
-    sliderContainer.append(fragment)
+    sliderTrack.append(fragment)
 }
 
-getPets()
+getPets().then((res) => {
+    const sliderContainer = document.querySelector('.our-friends__content__slider__container')
+    const prevBtn = document.getElementById('slider-prev')
+    const nextBtn = document.getElementById('slider-next')
+    const sliderItem = document.querySelector('.our-friends__content__slider__container-item')
+    const itemsArray = res
+
+    let slideWidth = 0
+    let slidesCount = 0
+    let slideItemMargin = 0
+    let slideNumber = 1
+    let position = 0
+
+    function initValues() {
+        slideWidth = sliderContainer.clientWidth
+        slidesCount = Math.ceil(itemsArray.length / Math.floor(sliderContainer.clientWidth / sliderItem.clientWidth))
+        slideItemMargin = parseFloat(getComputedStyle(sliderTrack.children[1]).marginLeft)
+    }
+
+    function trackIt(number) {
+        initValues()
+        position = (number * (slideWidth + slideItemMargin)) - slideWidth - slideItemMargin
+        sliderTrack.style.transform = `translateX(-${position}px)`
+    }
+
+    function trackDirection(direction) {
+        switch (direction) {
+            case 'prev':
+                slideNumber === 1 ? slideNumber = slidesCount : --slideNumber
+                trackIt(slideNumber)
+                break
+            case 'next':
+                slideNumber === slidesCount ? slideNumber = 1 : ++slideNumber
+                trackIt(slideNumber)
+                break
+            default:
+                break
+        }
+    }
+
+    nextBtn.addEventListener('click', () => {
+        trackDirection('next')
+    })
+
+    prevBtn.addEventListener('click', () => {
+        trackDirection('prev')
+    })
+
+    window.addEventListener('resize', () => {
+        initValues()
+        trackIt(slideNumber)
+    })
+})
+

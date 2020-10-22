@@ -9,6 +9,26 @@
 </head>
 <body>
 <h1 class="h1">Cozy House</h1>
+<div class="popup">
+    <div class="popup__content">
+        <div class="popup__content__img">
+            <img src="../../assets/images/popup-jennifer.png" alt="Jennifer">
+        </div>
+        <div class="popup__content__info">
+            <div class="popup__content__info-title">Jennifer</div>
+            <div class="popup__content__info-subtitle">Dog - Labrador</div>
+            <div class="popup__content__info-text">Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new forever home. This girl really enjoys being able to go outside to run and play, but won't hesitate to play up a storm in the house if she has all of her favorite toys.</div>
+            <div class="popup__content__info-about">
+                <ul class="popup__content__info-about-list">
+                    <li><span><b>Age:</b> 2 months</span></li>
+                    <li><span><b>Inoculations:</b> none</span></li>
+                    <li><span><b>Diseases:</b> none</span></li>
+                    <li><span><b>Parasites:</b> none</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 <header>
     <div class="container-inner">
         <div class="header__content">
@@ -25,8 +45,8 @@
                         <ul class="header__content__menu__items">
                             <li class="header__content__menu__items-active"><a href="../main/index.html">About the shelter</a></li>
                             <li><a href="../pets/index.html">Our pets</a></li>
-                            <li><a href="#">Help the shelter</a></li>
-                            <li><a href="#">Contacts</a></li>
+                            <li><a href="#" class="disabled-button">Help the shelter</a></li>
+                            <li><a href="#" class="disabled-button">Contacts</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -44,7 +64,7 @@
                     will see!
                 </div>
                 <div class="main__content__info-button">
-                    <a href="#" class="common-button">Make a friend</a>
+                    <a href="../pets/index.html" class="common-button">Make a friend</a>
                 </div>
             </div>
             <div class="main__content__img">
@@ -84,53 +104,22 @@
         <div class="our-friends__content">
             <div class="our-friends__content__title common-title">Our friends who<br>are looking for a house</div>
             <div class="our-friends__content__slider">
-                <button class="slider-button">
+                <button class="slider-button" id="slider-prev">
                     <svg width="14" height="6" viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M14 2V4H3V6L0 3L3 0V2H14Z" fill="#292929"/>
                     </svg>
                 </button>
                 <div class="our-friends__content__slider__container">
-<!--                    <div class="our-friends__content__slider__container-item">-->
-<!--                        <div class="our-friends__content__slider__container-item-image">-->
-<!--                            <img src="../../assets/images/katrine.png" alt="cat">-->
-<!--                        </div>-->
-<!--                        <div class="our-friends__content__slider__container-item-title">-->
-<!--                            Katrine-->
-<!--                        </div>-->
-<!--                        <a href="#" class="our-friends__content__slider__container-item-button">-->
-<!--                            Learn more-->
-<!--                        </a>-->
-<!--                    </div>-->
-<!--                    <div class="our-friends__content__slider__container-item">-->
-<!--                        <div class="our-friends__content__slider__container-item-image">-->
-<!--                            <img src="../../assets/images/jennifer.png" alt="dog">-->
-<!--                        </div>-->
-<!--                        <div class="our-friends__content__slider__container-item-title">-->
-<!--                            Jennifer-->
-<!--                        </div>-->
-<!--                        <a href="#" class="our-friends__content__slider__container-item-button">-->
-<!--                            Learn more-->
-<!--                        </a>-->
-<!--                    </div>-->
-<!--                    <div class="our-friends__content__slider__container-item">-->
-<!--                        <div class="our-friends__content__slider__container-item-image">-->
-<!--                            <img src="../../assets/images/woody.png" alt="dog">-->
-<!--                        </div>-->
-<!--                        <div class="our-friends__content__slider__container-item-title">-->
-<!--                            Woody-->
-<!--                        </div>-->
-<!--                        <a href="#" class="our-friends__content__slider__container-item-button">-->
-<!--                            Learn more-->
-<!--                        </a>-->
-<!--                    </div>-->
+                    <div class="slider__track">
+                    </div>
                 </div>
-                <button class="slider-button">
+                <button class="slider-button" id="slider-next">
                     <svg width="14" height="6" viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0 4V2L11 2V0L14 3L11 6V4L0 4Z" fill="#292929"/>
                     </svg>
                 </button>
             </div>
-            <a href="#" class="common-button">Get to know the rest</a>
+            <a href="../pets/index.html" class="common-button">Get to know the rest</a>
         </div>
     </div>
 </section>

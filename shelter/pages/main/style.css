@@ -362,6 +362,9 @@ html {
   position: absolute;
   opacity: 0; }
 
+b {
+  font-weight: bold; }
+
 .container-inner {
   width: 1280px;
   margin: 0 auto;
@@ -420,6 +423,11 @@ html {
     border: 2px solid #CDCDCD; }
     .slider-button:disabled path {
       fill: #CDCDCD; }
+
+a.disabled {
+  pointer-events: none;
+  cursor: pointer;
+  color: #888; }
 
 header {
   position: absolute;
@@ -701,11 +709,13 @@ header {
           justify-content: center;
           margin-bottom: 42px; } }
       .our-friends__content__slider__container {
-        display: flex;
         width: 990px;
         margin: 0 53px;
         padding: 35px 0;
         overflow: hidden; }
+        .our-friends__content__slider__container .slider__track {
+          display: flex;
+          transition: cubic-bezier(0.42, 0, 0.58, 1) 0.6s; }
         @media (max-width: 79.9375rem) {
           .our-friends__content__slider__container {
             width: 580px;
@@ -986,3 +996,61 @@ header {
       @media (max-width: 47.9375rem) {
         .main__footer__content__img img {
           width: 260px; } }
+
+.popup {
+  display: none;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  background: rgba(41, 41, 41, 0.6);
+  z-index: 5; }
+  .popup__content {
+    width: 900px;
+    height: 500px;
+    display: flex;
+    background: #FAFAFA;
+    box-shadow: 0 2px 35px 14px rgba(13, 13, 13, 0.04);
+    border-radius: 9px; }
+    .popup__content__img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 500px;
+      max-width: 500px; }
+      .popup__content__img img {
+        width: 100%; }
+    .popup__content__info {
+      max-width: 351px;
+      margin: 50px 0 0 29px; }
+      .popup__content__info-title {
+        margin-bottom: 10px;
+        font-size: 2.1875rem;
+        line-height: 130%;
+        letter-spacing: 0.06em; }
+      .popup__content__info-subtitle {
+        margin-bottom: 40px;
+        font-size: 1.25rem;
+        line-height: 115%;
+        letter-spacing: 0.06em; }
+      .popup__content__info-text {
+        margin-bottom: 40px;
+        font-size: 0.9375rem;
+        line-height: 110%;
+        letter-spacing: 0.06em; }
+      .popup__content__info-about {
+        font-size: 0.9375rem;
+        line-height: 110%;
+        letter-spacing: 0.06em; }
+        .popup__content__info-about-list {
+          list-style: disc; }
+          .popup__content__info-about-list li {
+            color: #F1CDB3;
+            margin-left: 15px; }
+            .popup__content__info-about-list li span {
+              color: black; }
+          .popup__content__info-about-list li + li {
+            margin-top: 10px; }
