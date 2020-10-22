@@ -71,7 +71,62 @@ const src = '../../assets/json/pets.json'
 async function getPets() {
     const res = await fetch(src)
     const pets = await res.json()
-    setPets(pets)
+    let fullPetsList = []
+
+    fullPetsList = (() => {
+        let tempArr =[]
+
+        for (let i = 0; i < 6; i++) {
+            const newPets = pets
+
+            for (let j = pets.length; j > 0; j--) {
+                let randInd = Math.floor(Math.random() * j)
+                const randElem = newPets.splice(randInd, 1)[0]
+                newPets.push(randElem)
+            }
+
+            tempArr = [...tempArr, ...newPets]
+        }
+        return tempArr
+    })()
+
+    setPets(sort863(fullPetsList))
+
+    for (let i = 0; i < (fullPetsList.length / 6); i++) {
+        const stepList = fullPetsList.slice(i * 6, (i * 6) + 6)
+
+        for (let j = 0; j < 6; j++) {
+            stepList.forEach((item, ind) => {
+                if (item.name === stepList[j].name && (ind !== j)) {
+                    sliderContainer.children[(i * 6) + j].style.border = '5px solid red'
+                }
+            })
+        }
+    }
+
+    function sort863(list) {
+        let length = list.length
+
+        for (let i = 0; i < (length / 6); i++) {
+            const stepList = fullPetsList.slice(i * 6, (i * 6) + 6)
+
+            for (let j = 0; j < 6; j++) {
+                const duplicatedItem = stepList.find((item, ind) => {
+                    return item.name === stepList[j].name && (ind !== j)
+                })
+
+                if (duplicatedItem !== undefined) {
+                    const ind =  (i * 6) + j
+                    const which8OfList = Math.trunc(ind / 8)
+
+                    list.splice(which8OfList * 8, 0, list.splice(ind, 1)[0])
+                    i-=2
+                    break
+                }
+            }
+        }
+        return list
+    }
 }
 
 function setPets(data) {
@@ -84,15 +139,17 @@ function setPets(data) {
         itemImageContainer.classList.add('our-friends__content__slider__container-item-image')
         const itemImage = document.createElement('img')
         itemImage.src = i.img
+        itemImage.alt = i.name
         itemImageContainer.append(itemImage)
         containerItem.append(itemImageContainer)
         const itemName = document.createElement('div')
         itemName.classList.add('our-friends__content__slider__container-item-title')
         itemName.innerText = i.name
         containerItem.append(itemName)
-        const itemButton = document.createElement('div')
+        const itemButton = document.createElement('a')
         itemButton.classList.add('our-friends__content__slider__container-item-button')
         itemButton.innerText = 'Learn more'
+        itemButton.href = '#'
         containerItem.append(itemButton)
 
         fragment.append(containerItem)
