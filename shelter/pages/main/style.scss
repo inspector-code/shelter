@@ -934,16 +934,20 @@ header {
 
 //POPUP
 .popup {
-  display: none;
+  display: flex;
   position: fixed;
   justify-content: center;
   align-items: center;
   top: 0;
   width: 100%;
   min-height: 100%;
-  overflow: hidden;
   background: rgba(41, 41, 41, 0.6);
   z-index: 5;
+  transition: .5s;
+
+  &-hidden {
+    visibility: hidden;
+  }
 
   &__content {
     width: 900px;
@@ -953,12 +957,47 @@ header {
     box-shadow: 0 2px 35px 14px rgba(13, 13, 13, 0.04);
     border-radius: 9px;
 
+    @media (max-width: $width-1279) {
+      width: 630px;
+      height: 350px;
+    }
+
+    @media (max-width: $width-767) {
+      width: 240px;
+      height: 341px;
+      padding: 10px;
+    }
+
+    &__button {
+      position: relative;
+      width: 52px;
+      height: 52px;
+      margin: 0;
+      padding: 0;
+      border-radius: 50%;
+      border: 2px solid #F1CDB3;
+      background: url('../../assets/icons/icon-close.svg') center no-repeat;
+      cursor: pointer;
+
+      @media (max-width: $width-767) {
+        right: -30px;
+      }
+    }
+
     &__img {
       display: flex;
       justify-content: center;
       align-items: center;
       width: 500px;
       max-width: 500px;
+
+      @media (max-width: $width-1279) {
+        width: 350px;
+      }
+
+      @media (max-width: $width-767) {
+        display: none;
+      }
 
       img {
         width: 100%;
@@ -969,11 +1008,25 @@ header {
       max-width: 351px;
       margin: 50px 0 0 29px;
 
+      @media (max-width: $width-1279) {
+        max-width: 260px;
+        margin: 10px 0 0 11px;
+      }
+
+      @media (max-width: $width-767) {
+        max-width: 100%;
+        margin: 0;
+      }
+
       &-title {
         margin-bottom: 10px;
         font-size: $font-size-title-35;
         line-height: 130%;
         letter-spacing: 0.06em;
+
+        @media (max-width: $width-767) {
+          text-align: center;
+        }
       }
 
       &-subtitle {
@@ -981,6 +1034,14 @@ header {
         font-size: $font-size-subtitle-20;
         line-height: 115%;
         letter-spacing: 0.06em;
+
+        @media (max-width: $width-1279) {
+          margin-bottom: 20px;
+        }
+
+        @media (max-width: $width-767) {
+          text-align: center;
+        }
       }
 
       &-text {
@@ -988,6 +1049,16 @@ header {
         font-size: $font-size-text-15;
         line-height: 110%;
         letter-spacing: 0.06em;
+
+        @media (max-width: $width-1279) {
+          margin-bottom: 20px;
+          font-size: rem(13px);
+        }
+
+        @media (max-width: $width-767) {
+          margin-bottom: 24px;
+          text-align: justify;
+        }
       }
 
       &-about {
@@ -1009,6 +1080,14 @@ header {
 
           li + li {
             margin-top: 10px;
+
+            @media (max-width: $width-1279) {
+              margin-top: 5px;
+            }
+
+            @media (max-width: $width-767) {
+
+            }
           }
         }
       }

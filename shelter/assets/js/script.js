@@ -181,4 +181,3 @@ getPets().then((res) => {
         trackIt(slideNumber)
     })
 })
-
