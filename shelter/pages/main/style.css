@@ -739,7 +739,8 @@ header {
           background: #FAFAFA;
           border-radius: 9px;
           overflow: hidden;
-          transition: .1s linear; }
+          transition: .1s linear;
+          cursor: pointer; }
           .our-friends__content__slider__container-item:hover {
             background: #FFFFFF;
             box-shadow: 0 2px 35px 5px rgba(13, 13, 13, 0.04); }
@@ -1008,26 +1009,24 @@ header {
   background: rgba(41, 41, 41, 0.6);
   z-index: 5;
   transition: .5s; }
-  .popup-hidden {
-    visibility: hidden; }
   .popup__content {
+    position: relative;
     width: 900px;
-    height: 500px;
     display: flex;
     background: #FAFAFA;
     box-shadow: 0 2px 35px 14px rgba(13, 13, 13, 0.04);
     border-radius: 9px; }
     @media (max-width: 79.9375rem) {
       .popup__content {
-        width: 630px;
-        height: 350px; } }
+        width: 630px; } }
     @media (max-width: 47.9375rem) {
       .popup__content {
         width: 240px;
-        height: 341px;
         padding: 10px; } }
     .popup__content__button {
-      position: relative;
+      position: absolute;
+      top: -55px;
+      right: -40px;
       width: 52px;
       height: 52px;
       margin: 0;
