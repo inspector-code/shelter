@@ -6,8 +6,6 @@
 
 //HEADER
 .pets__header {
-  position: fixed;
-  top: 0;
   background: #FFFFFF;
   padding: 30px 0;
 
@@ -19,12 +17,6 @@
     color: #292929;
   }
 
-  &__hamburger__btn > span,
-  &__hamburger__btn > span:before,
-  &__hamburger__btn > span:after {
-    background-color: black;
-  }
-
   &__items {
     color: #545454;
 
@@ -33,8 +25,7 @@
     }
 
     &-active {
-      outline: none;
-      border-bottom: rem(3px) solid #F1CDB3;
+      color: #292929;
     }
   }
 }

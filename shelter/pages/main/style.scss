@@ -99,7 +99,6 @@ b {
 a.disabled {
   pointer-events: none;
   cursor: pointer;
-  color: #888;
 }
 
 //END COMMON STYLES
@@ -115,12 +114,11 @@ header {
   @media (max-width: $width-1279) {
     padding-top: 30px;
   }
+}
 
-  @media (max-width: $width-767) {
-    .header-active-menu {
-      position: fixed;
-      right: 0;
-    }
+@media (max-width: $width-767) {
+  .header-active-menu {
+    left: auto;
   }
 }
 
@@ -965,6 +963,9 @@ header {
 
     &__button {
       position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       top: -55px;
       right: -40px;
       width: 52px;
@@ -972,9 +973,19 @@ header {
       margin: 0;
       padding: 0;
       border-radius: 50%;
+      background: transparent;
       border: 2px solid #F1CDB3;
-      background: url('../../assets/icons/icon-close.svg') center no-repeat;
       cursor: pointer;
+
+      &:hover {
+        background: #FDDCC4;
+        border: 2px solid #FDDCC4;
+      }
+
+      &-hover {
+        background: #FDDCC4;
+        border: 2px solid #FDDCC4;
+      }
 
       @media (max-width: $width-767) {
         right: -30px;

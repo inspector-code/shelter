@@ -426,8 +426,7 @@ b {
 
 a.disabled {
   pointer-events: none;
-  cursor: pointer;
-  color: #888; }
+  cursor: pointer; }
 
 header {
   position: absolute;
@@ -437,10 +436,10 @@ header {
   @media (max-width: 79.9375rem) {
     header {
       padding-top: 30px; } }
-  @media (max-width: 47.9375rem) {
-    header .header-active-menu {
-      position: fixed;
-      right: 0; } }
+
+@media (max-width: 47.9375rem) {
+  .header-active-menu {
+    left: auto; } }
 
 .header__content {
   display: flex;
@@ -1025,6 +1024,9 @@ header {
         padding: 10px; } }
     .popup__content__button {
       position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       top: -55px;
       right: -40px;
       width: 52px;
@@ -1032,9 +1034,15 @@ header {
       margin: 0;
       padding: 0;
       border-radius: 50%;
+      background: transparent;
       border: 2px solid #F1CDB3;
-      background: url("../../assets/icons/icon-close.svg") center no-repeat;
       cursor: pointer; }
+      .popup__content__button:hover {
+        background: #FDDCC4;
+        border: 2px solid #FDDCC4; }
+      .popup__content__button-hover {
+        background: #FDDCC4;
+        border: 2px solid #FDDCC4; }
       @media (max-width: 47.9375rem) {
         .popup__content__button {
           right: -30px; } }

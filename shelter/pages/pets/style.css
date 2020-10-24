@@ -1,23 +1,16 @@
 .pets__header {
-  position: fixed;
-  top: 0;
   background: #FFFFFF;
   padding: 30px 0; }
   .pets__header-title {
     color: #545454; }
   .pets__header-subtitle {
     color: #292929; }
-  .pets__header__hamburger__btn > span,
-  .pets__header__hamburger__btn > span:before,
-  .pets__header__hamburger__btn > span:after {
-    background-color: black; }
   .pets__header__items {
     color: #545454; }
     .pets__header__items li:hover {
       color: #292929; }
     .pets__header__items-active {
-      outline: none;
-      border-bottom: 0.1875rem solid #F1CDB3; }
+      color: #292929; }
 
 .friends__list {
   padding: 200px 0 100px;
