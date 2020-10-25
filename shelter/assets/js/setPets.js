@@ -1,5 +1,5 @@
 export function setPets(data, element) {
-    const fragment = document.createDocumentFragment()
+    const fragment = []
 
     data.forEach(i => {
         const containerItem = document.createElement('div')
@@ -110,9 +110,19 @@ export function setPets(data, element) {
                     closeButton.classList.remove('popup__content__button-hover')
                 } 
             }
+
+            popup.classList.add('popup__hidden')
             document.body.prepend(popup)
+            setTimeout(() => {
+                popup.classList.remove('popup__hidden')
+            }, 60)
         })
-        fragment.append(containerItem)
+        containerItem.classList.add('our-friends__content__slider__container-item-hidden')
+        fragment.push(containerItem)
+        setTimeout(() => {
+            containerItem.classList.remove('our-friends__content__slider__container-item-hidden')
+        }, 60)
     })
-    element.append(fragment)
+    element.innerHTML = ''
+    element.append(...fragment)
 }

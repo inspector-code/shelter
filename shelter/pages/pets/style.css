@@ -44,7 +44,6 @@
       .friends__list__content {
         padding: 30px 64px 0;
         overflow: hidden;
-        height: 1425px;
         margin-bottom: 10px; } }
     @media (max-width: 47.9375rem) {
       .friends__list__content {
