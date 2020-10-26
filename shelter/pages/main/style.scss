@@ -268,7 +268,7 @@ header {
         }
       }
 
-      li:hover {
+      li:hover:not(.disabled-button) {
         color: #FAFAFA;
       }
 
@@ -967,6 +967,7 @@ header {
     background: #FAFAFA;
     box-shadow: 0 2px 35px 14px rgba(13, 13, 13, 0.04);
     border-radius: 9px;
+    overflow: hidden;
 
     @media (max-width: $width-1279) {
       width: 630px;
@@ -1107,10 +1108,6 @@ header {
 
             @media (max-width: $width-1279) {
               margin-top: 5px;
-            }
-
-            @media (max-width: $width-767) {
-
             }
           }
         }

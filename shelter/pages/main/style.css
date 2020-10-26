@@ -548,7 +548,7 @@ header {
         @media (max-width: 47.9375rem) {
           .header__content__menu__items a {
             font-size: 2rem; } }
-      .header__content__menu__items li:hover {
+      .header__content__menu__items li:hover:not(.disabled-button) {
         color: #FAFAFA; }
       .header__content__menu__items li + li {
         margin-left: 35px; }
@@ -1026,7 +1026,8 @@ header {
     display: flex;
     background: #FAFAFA;
     box-shadow: 0 2px 35px 14px rgba(13, 13, 13, 0.04);
-    border-radius: 9px; }
+    border-radius: 9px;
+    overflow: hidden; }
     @media (max-width: 79.9375rem) {
       .popup__content {
         width: 630px; } }

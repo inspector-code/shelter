@@ -20,7 +20,7 @@ function initSlider(res) {
     function initValues() {
         slideWidth = sliderContainer.clientWidth
         slidesCount = Math.ceil(itemsArray.length / Math.floor(sliderContainer.clientWidth / sliderItem.clientWidth))
-        slideItemMargin = parseFloat(getComputedStyle(sliderTrack.children[1]).marginLeft)
+        slideItemMargin = parseInt(getComputedStyle(sliderTrack.children[1]).marginLeft, 10)
     }
 
     function trackIt(number) {
@@ -32,11 +32,11 @@ function initSlider(res) {
     function trackDirection(direction) {
         switch (direction) {
             case 'prev':
-                slideNumber === 1 ? slideNumber = slidesCount : --slideNumber
+                slideNumber === 1 ? slideNumber = slidesCount : slideNumber--
                 trackIt(slideNumber)
                 break
             case 'next':
-                slideNumber === slidesCount ? slideNumber = 1 : ++slideNumber
+                slideNumber === slidesCount ? slideNumber = 1 : slideNumber++
                 trackIt(slideNumber)
                 break
             default:
@@ -53,9 +53,11 @@ function initSlider(res) {
     })
 
     window.addEventListener('resize', () => {
+        slideNumber = 1
         initValues()
         trackIt(slideNumber)
     })
+    initValues()
 }
 
 const src = '../../assets/json/pets.json'
