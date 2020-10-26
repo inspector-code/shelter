@@ -1,34 +1,44 @@
 @import "../../assets/css/variables.scss";
 
-//COMMON STYLES
-
-//END COMMON STYLES
-
 //HEADER
 .pets__header {
+  position: fixed;
   background: #FFFFFF;
   padding: 30px 0;
+  transition: background .5s;
+  z-index: 1;
 
-  &-title {
+  & .header__content__logo-title a {
     color: #545454;
+    text-decoration: none;
   }
 
-  &-subtitle {
+  & .header__content__logo-subtitle {
     color: #292929;
   }
 
-  &__items {
+  & .header__content__menu__items {
     color: #545454;
+  }
 
-    li:hover {
-      color: #292929;
-    }
+  & .header__content__menu__items li:hover {
+    color: #292929;
+  }
 
-    &-active {
-      color: #292929;
-    }
+  & .header__content__menu__items-active {
+    color: #292929;
+  }
+
+  & .hamburger-menu__box {
+    background: #FFFFFF;
   }
 }
+
+.remove-bg-color {
+  background: transparent;
+  transition: background .5s;
+}
+
 //END HEADER
 
 
@@ -133,5 +143,6 @@
     }
   }
 }
+
 //END FRIENDS LIST
 

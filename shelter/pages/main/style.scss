@@ -96,9 +96,9 @@ b {
   }
 }
 
-a.disabled {
+.disabled-button {
   pointer-events: none;
-  cursor: pointer;
+  cursor: default;
 }
 
 //END COMMON STYLES
@@ -118,7 +118,9 @@ header {
 
 @media (max-width: $width-767) {
   .header-active-menu {
+    position: fixed;
     left: auto;
+    z-index: 5;
   }
 }
 
@@ -130,7 +132,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    z-index: 1;
+    z-index: 3;
 
     &-title {
       font-size: rem(32px);
@@ -162,6 +164,7 @@ header {
         width: 100%;
         background-color: rgba(41, 41, 41, 0.6);
         transition: .5s;
+        z-index: 2;
 
         &-hidden {
           visibility: hidden;
@@ -178,6 +181,7 @@ header {
           height: 100%;
           background: rgba(41, 41, 41, 1);
           transition: 0.5s;
+          z-index: 3;
 
           &-hidden {
             right: -100%;
@@ -194,7 +198,7 @@ header {
       height: 22px;
       margin-right: 43px;
       cursor: pointer;
-      z-index: 1;
+      z-index: 3;
 
       @media (max-width: $width-767) {
         display: flex;

@@ -1,16 +1,26 @@
 .pets__header {
+  position: fixed;
   background: #FFFFFF;
-  padding: 30px 0; }
-  .pets__header-title {
-    color: #545454; }
-  .pets__header-subtitle {
+  padding: 30px 0;
+  transition: background .5s;
+  z-index: 1; }
+  .pets__header .header__content__logo-title a {
+    color: #545454;
+    text-decoration: none; }
+  .pets__header .header__content__logo-subtitle {
     color: #292929; }
-  .pets__header__items {
+  .pets__header .header__content__menu__items {
     color: #545454; }
-    .pets__header__items li:hover {
-      color: #292929; }
-    .pets__header__items-active {
-      color: #292929; }
+  .pets__header .header__content__menu__items li:hover {
+    color: #292929; }
+  .pets__header .header__content__menu__items-active {
+    color: #292929; }
+  .pets__header .hamburger-menu__box {
+    background: #FFFFFF; }
+
+.remove-bg-color {
+  background: transparent;
+  transition: background .5s; }
 
 .friends__list {
   padding: 200px 0 100px;

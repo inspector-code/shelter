@@ -69,6 +69,5 @@ export async function getPets(src) {
         return list
     }
 
-    const randomArr = sort863(fullPetsList)
-    return randomArr
+    return sort863(fullPetsList)
 }

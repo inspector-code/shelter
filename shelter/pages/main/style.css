@@ -424,9 +424,9 @@ b {
     .slider-button:disabled path {
       fill: #CDCDCD; }
 
-a.disabled {
+.disabled-button {
   pointer-events: none;
-  cursor: pointer; }
+  cursor: default; }
 
 header {
   position: absolute;
@@ -439,7 +439,9 @@ header {
 
 @media (max-width: 47.9375rem) {
   .header-active-menu {
-    left: auto; } }
+    position: fixed;
+    left: auto;
+    z-index: 5; } }
 
 .header__content {
   display: flex;
@@ -448,7 +450,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    z-index: 1; }
+    z-index: 3; }
     .header__content__logo-title {
       font-size: 2rem;
       line-height: 110%;
@@ -472,7 +474,8 @@ header {
         height: 100%;
         width: 100%;
         background-color: rgba(41, 41, 41, 0.6);
-        transition: .5s; }
+        transition: .5s;
+        z-index: 2; }
         .header__content__menu .hamburger-menu-hidden {
           visibility: hidden;
           background-color: rgba(41, 41, 41, 0); }
@@ -485,7 +488,8 @@ header {
           width: 320px;
           height: 100%;
           background: #292929;
-          transition: 0.5s; }
+          transition: 0.5s;
+          z-index: 3; }
           .header__content__menu .hamburger-menu__box-hidden {
             right: -100%; } }
     .header__content__menu__btn {
@@ -496,7 +500,7 @@ header {
       height: 22px;
       margin-right: 43px;
       cursor: pointer;
-      z-index: 1; }
+      z-index: 3; }
       @media (max-width: 47.9375rem) {
         .header__content__menu__btn {
           display: flex; } }
