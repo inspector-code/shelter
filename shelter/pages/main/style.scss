@@ -967,7 +967,6 @@ header {
     background: #FAFAFA;
     box-shadow: 0 2px 35px 14px rgba(13, 13, 13, 0.04);
     border-radius: 9px;
-    overflow: hidden;
 
     @media (max-width: $width-1279) {
       width: 630px;
@@ -1015,6 +1014,8 @@ header {
       align-items: center;
       width: 500px;
       max-width: 500px;
+      border-radius: 9px 0 0 9px;
+      overflow: hidden;
 
       @media (max-width: $width-1279) {
         width: 350px;
