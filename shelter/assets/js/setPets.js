@@ -25,6 +25,8 @@ export function setPets(data, element) {
         containerItem.append(itemButton)
 
         containerItem.addEventListener('click', () => {
+            document.body.classList.add('scroll-lock')
+
             const popup = document.createElement('div')
             popup.classList.add('popup')
             popup.id = 'popup'
@@ -42,6 +44,7 @@ export function setPets(data, element) {
             closeButton.alt = 'Close'
             closeButton.append(closeButtonImg)
             closeButton.onclick = () => {
+                document.body.classList.remove('scroll-lock')
                 popup.remove()
             }
             popupContent.append(closeButton)
@@ -100,7 +103,10 @@ export function setPets(data, element) {
             popupAbout.append(popupList)
 
             document.onclick = (e) => {
-                if (e.target.className === 'popup') popup.remove()
+                if (e.target.className === 'popup') {
+                    document.body.classList.remove('scroll-lock')
+                    popup.remove()
+                }
             }
 
             popup.onmouseover = (e) => {
