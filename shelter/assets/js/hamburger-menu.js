@@ -28,3 +28,13 @@ function initCloseArea() {
         if (e.target.className === 'hamburger-menu') closeMenu()
     }
 }
+
+window.addEventListener('resize', () => {
+    if (!hamburgerMenu.classList.contains('hamburger-menu-hidden')) {
+        hamburgerMenuButton.classList.remove('hamburger-menu__active')
+        hamburgerMenuBox.classList.add('hamburger-menu__box-hidden')
+        hamburgerMenu.classList.add('hamburger-menu-hidden')
+        header.classList.remove('header-active-menu')
+        body.classList.remove('scroll-lock')
+    }
+})
