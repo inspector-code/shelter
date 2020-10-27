@@ -428,6 +428,9 @@ b {
   pointer-events: none;
   cursor: default; }
 
+.scroll-lock {
+  overflow: hidden; }
+
 header {
   position: absolute;
   left: 0;
